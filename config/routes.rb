@@ -9,4 +9,6 @@ Txtblast::Application.routes.draw do
   devise_for :users
   ActiveAdmin.routes(self)
   resources :users
+  
+  resources :surveys, :only => [:show]
 end

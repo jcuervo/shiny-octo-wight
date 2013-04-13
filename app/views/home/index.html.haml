@@ -1,5 +1,5 @@
 %h3 Active Surveys
 %ul
   - Survey.all.each do |survey|
-    %li=link_to survey.name, "#"
+    %li=link_to survey.name, survey_path(survey)
   
