@@ -3,6 +3,7 @@
 - @survey.questions.each do |question|
   %h3= question.content
   %canvas{:id => question.id, :height => "300", :width => "400"}
+  
   :javascript
     var barChartData = {
       labels : ["YES","NO"],
