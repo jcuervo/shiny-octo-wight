@@ -22,6 +22,22 @@ ActiveAdmin.register Survey do
     f.buttons
   end
   
+  show :title => :name do
+    panel "Question and Answers" do
+      table_for survey.questions.all do |t|
+        t.column "Question" do |question|
+          question.content
+        end
+        t.column "Yes" do |question|
+          question.survey_answers.yes.size
+        end
+        t.column "No" do |question|
+          question.survey_answers.yes.size
+        end
+      end
+    end
+  end
+
   sidebar :notes do
     "Some stuff here"
   end
