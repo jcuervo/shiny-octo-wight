@@ -1,14 +1,16 @@
 %h1= "#{@survey.name}"
 
-%table.table.table-striped.table-bordered
-  %thead
-    %tr
-      %th Question
-      %th Yes
-      %th No
-  %tbody
-    - @survey.questions.each do |question|
-      %tr
-        %td=question.content
-        %td=question.survey_answers.yes.size
-        %td=question.survey_answers.no.size
+- @survey.questions.each do |question|
+
+/ %table.table.table-striped.table-bordered
+/   %thead
+/     %tr
+/       %th Question
+/       %th Yes
+/       %th No
+/   %tbody
+/     - @survey.questions.each do |question|
+/       %tr
+/         %td=question.content
+/         %td=question.survey_answers.yes.size
+/         %td=question.survey_answers.no.size
