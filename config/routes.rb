@@ -11,4 +11,6 @@ Txtblast::Application.routes.draw do
   resources :users
   
   resources :surveys, :only => [:show]
+
+  mount TropoApp, at: '/tropo'
 end
