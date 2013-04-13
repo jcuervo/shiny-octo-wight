@@ -1,16 +1,20 @@
 %h1= "#{@survey.name}"
 
 - @survey.questions.each do |question|
+  %h3= question.content
+  %canvas{:id => question.id, :height => "300", :width => "400"}
+  :javascript
+    var barChartData = {
+      labels : ["YES","NO"],
+        datasets : [
+          {
+            fillColor : "rgba(220,220,220,0.5)",
+            strokeColor : "rgba(220,220,220,1)",
+            data : [#{question.survey_answers.yes.size}, #{question.survey_answers.no.size}]
+          }
+        ]
+      }
+    var myLine = new Chart(document.getElementById("#{question.id}").getContext("2d")).Bar(barChartData);
 
-/ %table.table.table-striped.table-bordered
-/   %thead
-/     %tr
-/       %th Question
-/       %th Yes
-/       %th No
-/   %tbody
-/     - @survey.questions.each do |question|
-/       %tr
-/         %td=question.content
-/         %td=question.survey_answers.yes.size
-/         %td=question.survey_answers.no.size
+
+
