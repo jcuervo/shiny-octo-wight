@@ -99,8 +99,7 @@ class TropoApp < Sinatra::Base
 
     survey_answer = question.survey_answers.create(
       answer: answer.eql?('yes') ? true : false, 
-      caller_id: caller_id
-    )
+      caller_id: caller_id)
 
     next_question = question.next_question(question.survey.id)
 
