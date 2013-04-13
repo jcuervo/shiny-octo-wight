@@ -1,4 +1,5 @@
 require 'tropo-webapi-ruby'
+require 'sinatra'
 
 class TropoApp < Sinatra::Base
 
@@ -16,6 +17,14 @@ class TropoApp < Sinatra::Base
     'Welcome to shiny shiny survey'
   end
 
+  post '/hangup.json' do
+  end
+
+  post '/error.json' do
+    @t.say 'We are sorry but something is messed up.'
+    @t.response
+  end
+
   post '/index.json' do
     caller_id = @v[:session][:from][:id]
 
@@ -26,11 +35,11 @@ class TropoApp < Sinatra::Base
       timeout: 30,
       required: true,
       say: {
-        value: 'Please enter the 4 digit survey ID'
+        value: 'Please enter the 5 digit survey ID'
       },
       attempts: 3,
       choices: {
-        value: '[4 DIGITS]', 
+        value: '[5 DIGITS]', 
         mode: 'dtmf'
       }
     }
@@ -91,8 +100,7 @@ class TropoApp < Sinatra::Base
 
     survey_answer = question.survey_answers.create(
       answer: answer.eql?('yes') ? true : false, 
-      caller_id: caller_id
-    )
+      caller_id: caller_id)
 
     next_question = question.next_question(question.survey.id)
 
