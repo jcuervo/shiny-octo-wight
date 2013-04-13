@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+
+ruby '1.9.3'
+
 gem 'rails', '3.2.13'
 gem 'sqlite3'
 group :assets do
@@ -29,6 +32,11 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem "tropo-webapi-ruby"
 
+group :development, :test do
+  gem 'letter_opener', git: "git://github.com/ryanb/letter_opener.git"
+end
+
 group :production do
   gem 'pg'
+  gem 'unicorn'
 end
