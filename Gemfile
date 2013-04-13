@@ -28,6 +28,8 @@ gem "better_errors", ">= 0.7.2", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem "tropo-webapi-ruby"
+gem "activeadmin", git: "https://github.com/gregbell/active_admin.git"
+gem "cocoon", "~> 1.1.2"
 
 group :development, :test do
   gem 'letter_opener', git: "git://github.com/ryanb/letter_opener.git"

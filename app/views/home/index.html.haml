@@ -1,4 +1,5 @@
-%h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+%h3 Active Surveys
+%ul
+  - Survey.all.each do |survey|
+    %li=link_to survey.name, survey_path(survey)
+  
