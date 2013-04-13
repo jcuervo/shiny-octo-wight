@@ -35,11 +35,11 @@ class TropoApp < Sinatra::Base
       timeout: 30,
       required: true,
       say: {
-        value: 'Please enter the 4 digit survey ID'
+        value: 'Please enter the 5 digit survey ID'
       },
       attempts: 3,
       choices: {
-        value: '[4 DIGITS]', 
+        value: '[5 DIGITS]', 
         mode: 'dtmf'
       }
     }
