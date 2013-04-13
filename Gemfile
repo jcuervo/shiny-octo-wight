@@ -38,6 +38,7 @@ group :development, :test do
   gem 'sqlite3'
   gem "factory_girl_rails", ">= 4.2.0"
   gem "rspec-rails", ">= 2.12.2"
+  gem 'pg'
 end
 
 group :production do
