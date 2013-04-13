@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -34,6 +33,8 @@ gem "tropo-webapi-ruby"
 
 group :development, :test do
   gem 'letter_opener', git: "git://github.com/ryanb/letter_opener.git"
+  gem 'dotenv-rails'
+  gem 'sqlite3'
 end
 
 group :production do
