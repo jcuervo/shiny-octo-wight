@@ -16,6 +16,14 @@ class TropoApp < Sinatra::Base
     'Welcome to shiny shiny survey'
   end
 
+  post '/hangup.json' do
+  end
+
+  post '/error.json' do
+    @t.say 'We are sorry but something is messed up.'
+    @t.response
+  end
+
   post '/index.json' do
     caller_id = @v[:session][:from][:id]
 
