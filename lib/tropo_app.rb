@@ -1,4 +1,5 @@
 require 'tropo-webapi-ruby'
+require 'sinatra'
 
 class TropoApp < Sinatra::Base
 
